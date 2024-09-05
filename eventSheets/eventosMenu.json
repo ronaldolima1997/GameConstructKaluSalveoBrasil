@@ -1,0 +1,52 @@
+{
+	"name": "eventosMenu",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "Botão",
+					"sid": 731990733559801
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 362622566156627,
+					"parameters": {
+						"layout": "fase 1"
+					}
+				}
+			],
+			"sid": 558914967347179
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 758826170363418
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Áudio",
+					"sid": 241542151135168,
+					"parameters": {
+						"audio-file": "FUNDO",
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 963084487390761
+		}
+	],
+	"sid": 792823405247424
+}

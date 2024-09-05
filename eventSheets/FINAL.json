@@ -1,0 +1,55 @@
+{
+	"name": "FINAL",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 255165762203221
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Áudio",
+					"sid": 841502466910972,
+					"parameters": {
+						"audio-file": "AVANÇO",
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 751238801293645
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 782082607530127,
+					"parameters": {
+						"interval-seconds": "10"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 945521311636888,
+					"parameters": {
+						"layout": "menu"
+					}
+				}
+			],
+			"sid": 922508504736196
+		}
+	],
+	"sid": 218144798968407
+}

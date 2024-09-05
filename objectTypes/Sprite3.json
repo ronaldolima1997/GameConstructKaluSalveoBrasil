@@ -1,0 +1,76 @@
+{
+	"name": "Sprite3",
+	"plugin-id": "Sprite",
+	"sid": 445149771759481,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Anchor",
+			"name": "Âncora",
+			"sid": 837983713284355
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 100,
+						"height": 54,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3254359,
+						"collisionPoly": {
+							"points": [
+								0.31,
+								0.14814814814814814,
+								0.38,
+								0.14814814814814814,
+								0.54,
+								0.16666666666666666,
+								0.59,
+								0.2037037037037037,
+								0.63,
+								0.24074074074074073,
+								0.73,
+								0.3888888888888889,
+								0.78,
+								0.48148148148148145,
+								0.8,
+								0.5555555555555556,
+								0.8,
+								0.6851851851851852,
+								0.77,
+								0.8333333333333334,
+								0.68,
+								1,
+								0.3,
+								1,
+								0.19,
+								0.8518518518518519,
+								0.2,
+								0.4444444444444444
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 945636019579029,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

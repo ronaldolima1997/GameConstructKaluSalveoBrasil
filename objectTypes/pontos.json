@@ -1,0 +1,15 @@
+{
+	"name": "pontos",
+	"plugin-id": "Text",
+	"sid": 977458132788543,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Anchor",
+			"name": "Âncora",
+			"sid": 276596194858937
+		}
+	],
+	"effectTypes": []
+}

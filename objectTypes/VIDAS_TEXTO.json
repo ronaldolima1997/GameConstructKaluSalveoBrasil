@@ -1,0 +1,15 @@
+{
+	"name": "VIDAS_TEXTO",
+	"plugin-id": "Text",
+	"sid": 927867220837645,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Anchor",
+			"name": "Âncora",
+			"sid": 770135093904507
+		}
+	],
+	"effectTypes": []
+}

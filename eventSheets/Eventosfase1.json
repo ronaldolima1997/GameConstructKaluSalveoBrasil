@@ -1,0 +1,1072 @@
+{
+	"name": "Eventosfase1",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "ContadorDePontos",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 486968321006378
+		},
+		{
+			"eventType": "variable",
+			"name": "direção",
+			"type": "string",
+			"initialValue": "\"direita\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 518959045268454
+		},
+		{
+			"eventType": "variable",
+			"name": "PegarChave",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 918108950748490
+		},
+		{
+			"eventType": "variable",
+			"name": "life",
+			"type": "number",
+			"initialValue": "3",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 205302330773873
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "kalu",
+					"sid": 327884537747767,
+					"parameters": {
+						"object": "garrafa"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "garrafa",
+					"sid": 913004412539276
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 528916520917398,
+					"parameters": {
+						"variable": "ContadorDePontos",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "pontos",
+					"sid": 964032742220211,
+					"parameters": {
+						"text": "\"Pontos: \"& ContadorDePontos"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Áudio",
+					"sid": 814654471296874,
+					"parameters": {
+						"audio-file": "moeda",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 192464944725827
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 337735556099078,
+					"parameters": {
+						"variable": "ContadorDePontos",
+						"comparison": 0,
+						"value": "100"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 525115352372087
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Teclado",
+					"sid": 329034197838938,
+					"parameters": {
+						"key": 38
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "kalu",
+					"sid": 361039170449335,
+					"parameters": {
+						"animation": "\"pulando\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Áudio",
+					"sid": 367768959635724,
+					"parameters": {
+						"audio-file": "pulando",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 511785653197550
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Teclado",
+					"sid": 697360108627705,
+					"parameters": {
+						"key": 39
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-mirrored",
+					"objectClass": "kalu",
+					"sid": 572015567408746,
+					"parameters": {
+						"state": "mirrored"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "kalu",
+					"sid": 999901036560709,
+					"parameters": {
+						"animation": "\"correndo01\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 462016333033093,
+					"parameters": {
+						"variable": "direção",
+						"value": "\"direita\""
+					}
+				}
+			],
+			"sid": 944322063035752
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Teclado",
+					"sid": 444021844939334,
+					"parameters": {
+						"key": 37
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-mirrored",
+					"objectClass": "kalu",
+					"sid": 921398631207667,
+					"parameters": {
+						"state": "not-mirrored"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "kalu",
+					"sid": 889456553640471,
+					"parameters": {
+						"animation": "\"correndo01\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 909272336196310,
+					"parameters": {
+						"variable": "direção",
+						"value": "\"esquerda\""
+					}
+				}
+			],
+			"sid": 675220597902895
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Teclado",
+					"sid": 689332233899268,
+					"parameters": {
+						"key": 32
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Áudio",
+					"sid": 755735884999889,
+					"parameters": {
+						"audio-file": "flecha",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 526947127894391,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 109714240918798,
+							"parameters": {
+								"variable": "direção",
+								"comparison": 0,
+								"value": "\"direita\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "kalu",
+							"sid": 919688857308427,
+							"parameters": {
+								"object": "flecha",
+								"layer": "0",
+								"image-point": "1",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 635944882006579
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 960211784954035,
+							"parameters": {
+								"variable": "direção",
+								"comparison": 0,
+								"value": "\"esquerda\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "kalu",
+							"sid": 210334615690537,
+							"parameters": {
+								"object": "flecha",
+								"layer": "0",
+								"image-point": "1",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "flecha",
+							"sid": 717294834721119,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "flecha",
+							"sid": 576107849909664,
+							"behaviorType": "Projétil",
+							"parameters": {
+								"angle": "180"
+							}
+						}
+					],
+					"sid": 694286183322736
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "flecha",
+					"sid": 182860298800664,
+					"parameters": {
+						"object": "alien"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "alien",
+					"sid": 292566996429978
+				},
+				{
+					"id": "destroy",
+					"objectClass": "flecha",
+					"sid": 494248561662408
+				}
+			],
+			"sid": 132771073676680
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "flecha",
+					"sid": 301356837261511,
+					"parameters": {
+						"object": "chao"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "flecha",
+					"sid": 281081129280863
+				}
+			],
+			"sid": 185128678936175
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "fogo",
+					"sid": 388764947514739,
+					"parameters": {
+						"object": "flecha"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "fogo",
+					"sid": 217478819155118
+				},
+				{
+					"id": "destroy",
+					"objectClass": "flecha",
+					"sid": 588668909243811
+				}
+			],
+			"sid": 358945327392445
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-animation-finished",
+					"objectClass": "kalu",
+					"sid": 852639438356134,
+					"parameters": {
+						"animation": "\"atirando\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "kalu",
+					"sid": 321989932927142,
+					"parameters": {
+						"animation": "\"parado\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 358144115813716
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Teclado",
+					"sid": 298642147035868,
+					"parameters": {
+						"key": 39
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "kalu",
+					"sid": 236650270265049,
+					"parameters": {
+						"animation": "\"correndo01\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 307760866048335
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Teclado",
+					"sid": 975989042927903,
+					"parameters": {
+						"key": 37
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "kalu",
+					"sid": 191905412838669,
+					"parameters": {
+						"animation": "\"correndo01\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 983946994814516
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-landed",
+					"objectClass": "kalu",
+					"sid": 223905875199438,
+					"behaviorType": "Plataforma"
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "kalu",
+					"sid": 312577679503558,
+					"parameters": {
+						"animation": "\"parado\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 708911500349881
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "kalu",
+					"sid": 191697414979299,
+					"parameters": {
+						"object": "chave"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 785864977901621,
+					"parameters": {
+						"variable": "ContadorDePontos",
+						"comparison": 0,
+						"value": "100"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "chave",
+					"sid": 978585262530983
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 159057987035988,
+					"parameters": {
+						"variable": "PegarChave",
+						"value": "1"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Áudio",
+					"sid": 415753804848442,
+					"parameters": {
+						"audio-file": "moeda",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 264239196287440
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "kalu",
+					"sid": 692600436727818,
+					"parameters": {
+						"object": "portal"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 243883216250141,
+					"parameters": {
+						"variable": "PegarChave",
+						"comparison": 0,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 537592076721244,
+					"parameters": {
+						"layout": "fase 2"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 700827548672494,
+					"parameters": {
+						"variable": "ContadorDePontos",
+						"value": "0"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Áudio",
+					"sid": 315305515039635,
+					"parameters": {
+						"audio-file": "AVANÇO",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 569506250554912
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "kalu",
+					"sid": 347949658395645,
+					"parameters": {
+						"object": "alien"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 706586847690019,
+					"parameters": {
+						"variable": "life",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "VIDAS_TEXTO",
+					"sid": 873486064240628,
+					"parameters": {
+						"text": "\"VIDAS: \"&life"
+					}
+				},
+				{
+					"id": "shake",
+					"objectClass": "kalu",
+					"sid": 940221733010415,
+					"behaviorType": "CentrarEm",
+					"parameters": {
+						"magnitude": "20",
+						"duration": "0.4",
+						"mode": "reducing-magnitude"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "kalu",
+					"sid": 444114333364104,
+					"parameters": {
+						"x": "69",
+						"y": "183"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Áudio",
+					"sid": 916454997886365,
+					"parameters": {
+						"audio-file": "MORREU",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"MORTE\""
+					}
+				}
+			],
+			"sid": 223237849447571
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "kalu",
+					"sid": 463710625927787,
+					"parameters": {
+						"object": "fogo"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 505635276632577,
+					"parameters": {
+						"variable": "life",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "VIDAS_TEXTO",
+					"sid": 405858946287554,
+					"parameters": {
+						"text": "\"VIDAS: \"&life"
+					}
+				},
+				{
+					"id": "shake",
+					"objectClass": "kalu",
+					"sid": 433904891993373,
+					"behaviorType": "CentrarEm",
+					"parameters": {
+						"magnitude": "20",
+						"duration": "0.4",
+						"mode": "reducing-magnitude"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "kalu",
+					"sid": 578570127160903,
+					"parameters": {
+						"x": "69",
+						"y": "183"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Áudio",
+					"sid": 476715338132156,
+					"parameters": {
+						"audio-file": "MORREU",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"MORTE\""
+					}
+				}
+			],
+			"sid": 390413376575572
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "kalu",
+					"sid": 501700677192972,
+					"parameters": {
+						"object": "limbo"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 498008605801342,
+					"parameters": {
+						"variable": "life",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "VIDAS_TEXTO",
+					"sid": 344080046796260,
+					"parameters": {
+						"text": "\"VIDAS: \"&life"
+					}
+				},
+				{
+					"id": "shake",
+					"objectClass": "kalu",
+					"sid": 856915325341690,
+					"behaviorType": "CentrarEm",
+					"parameters": {
+						"magnitude": "20",
+						"duration": "0.4",
+						"mode": "reducing-magnitude"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "kalu",
+					"sid": 983700581968715,
+					"parameters": {
+						"x": "69",
+						"y": "183"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Áudio",
+					"sid": 812513596993155,
+					"parameters": {
+						"audio-file": "MORREU",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"MORTE\""
+					}
+				}
+			],
+			"sid": 336226033189081
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 856150154928184,
+					"parameters": {
+						"variable": "life",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 428928744534977,
+					"parameters": {
+						"layout": "menu"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 656002545366312,
+					"parameters": {
+						"variable": "life",
+						"value": "3"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 375000954558873,
+					"parameters": {
+						"variable": "ContadorDePontos",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 741422996711263
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 869798869086697
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Áudio",
+					"sid": 945796012796429,
+					"parameters": {
+						"audio-file": "FUNDO",
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"MUSIC\""
+					}
+				}
+			],
+			"sid": 486428171772456
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "kalu",
+					"sid": 761456062083857,
+					"parameters": {
+						"object": "explicação"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "stop-animation",
+					"objectClass": "kalu",
+					"sid": 936100549842995
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Sprite",
+					"sid": 246290444855080,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Sprite3",
+					"sid": 643868034201265,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "FonteDeSprites",
+					"sid": 151335018129332,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 738296167371064,
+					"parameters": {
+						"seconds": "5"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Sprite",
+					"sid": 124584745240039,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Sprite3",
+					"sid": 161463689173610,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "FonteDeSprites",
+					"sid": 986433266844203,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 142835517900767
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "kalu",
+					"sid": 452208884644499,
+					"parameters": {
+						"object": "chave"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "Sprite5",
+					"sid": 520998564324850,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "FonteDeSprites2",
+					"sid": 806117213648528,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 827565683906804,
+					"parameters": {
+						"seconds": "5"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Sprite5",
+					"sid": 759818386028656,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "FonteDeSprites2",
+					"sid": 601824097475471,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 582607530119523
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "kalu",
+					"sid": 921560978899121,
+					"parameters": {
+						"object": "portal"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "Sprite2",
+					"sid": 258809672797318,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "FonteDeSprites3",
+					"sid": 295266679478674,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 719109709698760,
+					"parameters": {
+						"seconds": "5"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Sprite2",
+					"sid": 412512101599052,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "FonteDeSprites3",
+					"sid": 104214283807021,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 898949122493370
+		}
+	],
+	"sid": 429050428068869
+}
